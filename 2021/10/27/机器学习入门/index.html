@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="程序,码农,网站" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>机器学习入门 |  Aurora</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <!-- mermaid -->
+      
+    <link rel="alternate" href="/atom.xml" title="Aurora" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-机器学习入门"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  机器学习入门
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/10/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/" class="article-date">
+  <time datetime="2021-10-27T11:47:11.650Z" itemprop="datePublished">2021-10-27</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">3.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">10 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="路线图-基于《机器学习实战》"><a href="#路线图-基于《机器学习实战》" class="headerlink" title="路线图(基于《机器学习实战》)"></a>路线图(基于《机器学习实战》)</h1><blockquote>
+<p> 第一部分</p>
+</blockquote>
+<ul>
+<li>什么是机器学习，他试图解决什么问题，以及其系统的主要类别和基本概念</li>
+<li>典型机器学习项目中的步骤</li>
+<li>通过将数据与模型进行拟合来学习</li>
+<li>优化成本函数</li>
+<li>处理、清洁和准备数据</li>
+<li>选择和工程化特征</li>
+<li>选择模型并使用交叉验证调整参数</li>
+<li>机器学习的挑战，特别是欠拟合和过拟合（偏差/方差的权衡）</li>
+<li>最常见的学习算法：线性和多项式回归、逻辑回归、K-临近算法、支持向量机、决策树、随机森林和集成方法</li>
+<li>降低训练数据的维度以应对“维度的诅咒”</li>
+<li>其他无监督徐徐技术，包括聚类、密度估计和异常检测</li>
+</ul>
+<hr>
+<blockquote>
+<p>第二部分</p>
+</blockquote>
+<ul>
+<li>什么是神经网络以及他们的作用</li>
+<li>使用TensorFlow和Keras构建和训练神经网络</li>
+<li>最重要的神经网络架构，包括用于表格数据的前反馈神经网络、用于计算机视觉的卷积网络、用于序列处理的递归网络和长短期记忆（LSTM）网络、用于自然语言处理的编码器/解码器和Transformer、自动编码器和用于生成学习的生成式对抗网络（GAN）</li>
+<li>训练深度神经网络的技术</li>
+<li>如何使用强化学习构建可以通过反复试错学习好的策略的代理程序（例如游戏中的机器人）</li>
+<li>有效的加载和预处理大量数据</li>
+<li>大规模训练和部署TensorFlow模型</li>
+</ul>
+<h1 id="机器学习概览"><a href="#机器学习概览" class="headerlink" title="机器学习概览"></a>机器学习概览</h1><h2 id="1-1-什么是机器学习"><a href="#1-1-什么是机器学习" class="headerlink" title="1.1 什么是机器学习"></a>1.1 什么是机器学习</h2><blockquote>
+<p><code>一个计算机程序利用经验E来学习任务T，性能是P，如果针对任务T的性能P随着经验E不断增长，则称为机器学习。</code><br>系统用来进行学习的样例称作训练集，每个训练样例称作训练实例（或样本）。经验E是训练数据，性能P需要定义，性能指标常被称作“准确率”。</p>
+</blockquote>
+<h2 id="1-2-为什么使用机器学习"><a href="#1-2-为什么使用机器学习" class="headerlink" title="1.2 为什么使用机器学习"></a>1.2 为什么使用机器学习</h2><p>人类是怎样学习的：<br><img src="https://img-blog.csdnimg.cn/a868e2b64b1541debfed57e4cc05458a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQXVyb3JhdA==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="ALT"></p>
+<p>传统编程：<br><img src="https://img-blog.csdnimg.cn/1c5bd7c2d3504dd593e26e2ba004aa17.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQXVyb3JhdA==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="ALT"></p>
+<blockquote>
+<p>传统编程的弊端：1、规则难以定义  2、规则不断变化<br>这就导致程序很难维护</p>
+</blockquote>
+<p>机器学习：<br><img src="https://img-blog.csdnimg.cn/2a90ad8b00ab4205a5c5b066871c3602.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQXVyb3JhdA==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="ALT"></p>
+<blockquote>
+<p>即机器自己推算规律</p>
+</blockquote>
+<p>自适应改变：<br><img src="https://img-blog.csdnimg.cn/0703bc6a5cc74b768f18436c4cc97c1c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQXVyb3JhdA==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center" alt="ALT"></p>
+<h2 id="1-3-机器学习的应用示例"><a href="#1-3-机器学习的应用示例" class="headerlink" title="1.3 机器学习的应用示例"></a>1.3 机器学习的应用示例</h2><ul>
+<li>分析生产线上的产品图像来对产品进行自动分类<br>这是图像分类问题，使用卷积神经网络（CNN，见第14章）的典型示例。</li>
+<li>通过脑部扫描发现肿瘤<br>这是语义分割，图像中的每个像素都需要被分类（当我们想确定肿瘤的确切位置和形状时），也使用CNN。</li>
+<li>自动分类新闻<br>这是自然语言处理（NLP），更具体地是文本分类，可以使用循环神经网络（RNN）、CNN或者Transformer（见第16章）。</li>
+<li>论坛中自动标记恶评<br>这也是文本分类，使用相同的自然语言处理工具。</li>
+<li>自动对长文章做总结<br>这是自然语言处理的一个分支，叫作文本总结，使用相同的工具。</li>
+<li>创建一个聊天机器人或者个人助理<br>这涉及自然语言处理的很多分支，包括自然语言理解（NLU）和问答模块。</li>
+<li>基于很多性能指标来预测公司下一年的收入<br>这是一个回归问题（如预测值），需要使用回归模型进行处理，例如线性回归或多项式回归（见第4章）、SVM回归（见第5章）、随机森林回归（见第7章）或者人工神经网络（见第10章），如果考虑过去的性能指标，可以使用RNN、CNN或者Transformer（见第15章和第16章）。</li>
+<li>让应用对语音命令做出反应<br>这是语音识别，要求能处理音频采样。因为音频是很长、很复杂的序列，所以一般使用RNN、CNN或者Transformer（见第15章和第16章）进行处理。</li>
+<li>检测信用卡欺诈<br>这是异常检测（见第9章）。</li>
+<li>基于客户的购买记录来对客户进行分类，对每一类客户设计不同的市场策略<br>这是聚类问题（见第9章）。</li>
+<li>用清晰而有洞察力的图表来表示复杂的高维数据集<br>这是数据可视化，经常涉及降维技术（见第8章）。</li>
+<li>基于以前的购买记录给客户推荐可能感兴趣的产品<br>这是推荐系统，一个办法是将以前的购买记录（和客户的其他信息）输入人工神经网络（见第10章），从而输出客户最可能购买的产品。这个神经网络是在所有客户的购买记录上训练的。</li>
+<li>为游戏建造智能机器人<br>这通常通过强化学习（RL，见第18章）来解决。强化学习是机器学习的一个分支，在一个给定的环境（例如游戏）中，训练代理（例如机器人）选择在一段时间内将它们的奖励最大化的行动（例如，机器人可能会在玩家每次失去一些生命值时获得奖励）。在围棋比赛中打败世界冠军的著名AlphaGo程序就是使用RL构建的。<h2 id="1-4-机器学习系统的类型"><a href="#1-4-机器学习系统的类型" class="headerlink" title="1.4 机器学习系统的类型"></a>1.4 机器学习系统的类型</h2><blockquote>
+<p>现有的机器学习系统类型繁多，为便于理解，我们根据以下标准将它们进行大的分类：<br>·<code>是否在人类监督下训练（有监督学习、无监督学习、半监督学习和强化学习）。</code><br>·<code>是否可以动态地进行增量学习（在线学习和批量学习）。</code><br>·<code>是简单地将新的数据点和已知的数据点进行匹配，还是像科学家那样，对训练数据进行模式检测然后建立一个预测模型（基于实例的学习和基于模型的学习）。</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-4-1-有监督学习和无监督学习"><a href="#1-4-1-有监督学习和无监督学习" class="headerlink" title="1.4.1 有监督学习和无监督学习"></a>1.4.1 有监督学习和无监督学习</h3><ol>
+<li>有监督学习<br>提供给算法的包含所需解决方案的训练集称为标签</li>
+</ol>
+<p>回归问题：在给定输入特征的情况下预测值（通常有多个输入特征，有时有多个输出值）</p>
+<p>这里是一些最重要的有监督学习算法（本书中会介绍）：</p>
+<ul>
+<li>k-近邻算法</li>
+<li>线性回归</li>
+<li>逻辑回归</li>
+<li>支持向量机（SVM）</li>
+<li>决策树和随机森林</li>
+<li>神经网络</li>
+</ul>
+<ol start="2">
+<li>无监督学习<br>无监督学习的训练数据都是未经标记的（见图1-7）。系统会在没有“老师”的情况下进行学习。无标签的训练集，用于无监督学习。<br>这里有一些最重要的无监督学习算法（大部分会在第8章和第9章中介绍）：</li>
+</ol>
+<p><code>聚类算法</code></p>
+<ul>
+<li>k-均值算法</li>
+<li>DBSCAN</li>
+<li>分层聚类分析（HCA）</li>
+</ul>
+<p><code>异常检测和新颖性检测</code></p>
+<ul>
+<li>单类SVM</li>
+<li>孤立森林</li>
+</ul>
+<p><code>可视化和降维</code></p>
+<ul>
+<li>主成分分析（PCA）</li>
+<li>核主成分分析</li>
+<li>局部线性嵌入（LLE）</li>
+<li>t-分布随机近邻嵌入（t-SNE）</li>
+</ul>
+<p><code>关联规则学习</code></p>
+<ul>
+<li>Apriori</li>
+<li>Eclat</li>
+</ul>
+<p>可视化、降维：降维的目的是在不丢失太多信息的前提下简化数据。方法之一是将多个相关特征合并为一个。<br>特征提取：</p>
+<blockquote>
+<p>通常比较好的做法是，先使用降维算法减少训练数据的维度，再将其提供给另一个机器学习算法（例如有监督学习算法）。这会使它运行得更快，数据占用的磁盘空间和内存都会更小，在某些情况下，执行性能也会更高.</p>
+</blockquote>
+<p>还有一个常见的无监督任务是关联规则学习，其目的是挖掘大量数据，发现属性之间的有趣联系。</p>
+<ol>
+<li><p>半监督学习<br>由于通常给数据做标记是非常耗时和昂贵的，你往往会有很多未标记的数据而很少有已标记的数据。有些算法可以处理部分已标记的数据。这被称为半监督学习。大多数半监督学习算法是无监督算法和有监督算法的结合。</p>
+</li>
+<li><p>强化学习<br>它的学习系统（在其语境中称为智能体）能够观察环境，做出选择，执行动作，并获得回报（或者是以负面回报的形式获得惩罚，见图1-12）所以它必须自行学习什么是最好的策略，从而随着时间的推移获得最大的回报。策略代表智能体在特定情况下应该选择的动作。</p>
+</li>
+</ol>
+<h3 id="1-4-2-批量学习和在线学习"><a href="#1-4-2-批量学习和在线学习" class="headerlink" title="1.4.2 批量学习和在线学习"></a>1.4.2 批量学习和在线学习</h3><blockquote>
+<p>另一个给机器学习系统分类的标准是看系统是否可以从传入的数据流中进行增量学习。</p>
+</blockquote>
+<ul>
+<li>批量学习<br>在批量学习中，系统无法进行增量学习——即必须使用所有可用数据进行训练。这需要大量时间和计算资源，所以通常都是离线完成的。<br>离线学习就是先训练系统，然后将其投入生产环境，这时学习过程停止，它只是将其所学到的应用出来。如果希望批量学习系统学习新数据（例如新型垃圾邮件），需要在完整数据集（包括新数据和旧数据）的基础上重新训练系统的新版本，然后停用旧系统，用新系统取而代之。如果系统需要应对快速变化的数据（例如，预测股票价格），那么你需要一个更具响应力的解决方案。此外，使用完整数据集训练需要耗费大量的计算资源（CPU、内存空间、磁盘空间、磁盘I/O、网络I/O等）。如果你的数据量非常大，并且每天从零开始自动执行训练系统，</li>
+</ul>
+<ul>
+<li>在线学习<br>在在线学习中，你可以循序渐进地给系统提供训练数据，逐步积累学习成果。这种提供数据的方式可以是单独的，也可以采用小批量的小组数据来进行训练。每一步学习都很快速并且便宜，这样系统就可以根据飞速写入的最新数据进行学习（见图1-13）。<br>对于这类系统——需要接收持续的数据流（例如股票价格），同时对数据流的变化做出快速或自主的反应，使用在线学习是一个非常好的<br>方式。<br>核外学习通常是离线完成的（也就是不在实时（live）系统上），因此在线学习这个名字很容易让人产生误解。我们可以将其视为<br>增量学习。</li>
+</ul>
+<p>如果设置的学习率很高，那么系统将会迅速适应新数据，但同时也会很快忘记旧数据（你肯定不希望垃圾邮件过滤器只对最新显示的邮件进行标记）。反过来，如果学习率很低，系统会有更高的惰性，也就是说，学习会更缓慢，同时也会对新数据中的噪声或者非典型数据点（离群值）的序列更不敏感。在线学习面临的一个重大挑战是，如果给系统输入不良数据，系统的性能将会逐渐下降。为了降低这种风险，你需要密切监控系统，一旦检测到性能下降，就及时中断学习（可能还需要恢复到之前的工作状态）。当然，同时你还需要监控输入数据，并对异常数据做出响应（例如，使用异常检测算法）</p>
+<h3 id="1-4-3-基于实例的学习与基于模型的学习"><a href="#1-4-3-基于实例的学习与基于模型的学习" class="headerlink" title="1.4.3　基于实例的学习与基于模型的学习"></a>1.4.3　基于实例的学习与基于模型的学习</h3><p>另一种对机器学习系统进行分类的方法是看它们如何泛化。大多数机器学习任务是要做出预测。这意味着系统需要通过给定的训练示例，<br>在它此前并未见过的示例上进行预测（泛化）。在训练数据上实现良好的性能指标固然重要，但是还不够充分。真正的目的是要在新的对象实例上表现出色。泛化的主要方法有两种：基于实例的学习和基于模型的学习</p>
+<h2 id="1-5-机器学习的主要挑战"><a href="#1-5-机器学习的主要挑战" class="headerlink" title="1.5 机器学习的主要挑战"></a>1.5 机器学习的主要挑战</h2><h2 id="1-6-测试与验证"><a href="#1-6-测试与验证" class="headerlink" title="1.6 测试与验证"></a>1.6 测试与验证</h2> 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/10/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="tag">机器学习</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/10/27/Jupyter%20Notebook/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Jupyter Notebook（Numpy + matplotlib）</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        <i class="ri-time-line"></i>
+        <span id="runtime_span"></span>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> Aurora
+      </li>
+    </ul>
+    <!-- <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul> -->
+    <!-- <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul> -->
+    <!-- <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        cnzz统计
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul> -->
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/apple-touch-icon-next.svg" alt="Aurora"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="https://blog.csdn.net/Aurorat">博客</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+ 
+<script src="/js/clickBoom2.js"></script>
+ 
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+  </div>
+</body>
+
+</html>
